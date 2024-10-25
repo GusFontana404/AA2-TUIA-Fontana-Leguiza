@@ -37,7 +37,7 @@ Los principales objetivos de este trabajo son:
      - **rock-paper-scissors.py**: Utiliza la cámara para clasificar gestos en tiempo real utilizando el modelo entrenado, mostrando el resultado en pantalla.
 
 3. ### **Carpeta PROBLEMA3**
-   - Contiene la notebook que desarrolla el **Problema 3**, que abarca la implementación de una CNN para clasificación de imágenes.
+   - Contiene la notebook que desarrolla el **Problema 3**, que abarca la implementación de modelos de redes neuronales para clasificación de imágenes.
    - [Link para descargar el dataset](https://drive.google.com/file/d/1Pqs5Y6dZr4R66Dby5hIUIjPZtBI28rmJ/view?usp=drive_link)
 
 ---
