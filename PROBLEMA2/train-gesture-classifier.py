@@ -5,6 +5,7 @@ import argparse
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten, Activation, Input, Dropout
+from tensorflow.python.keras.callbacks import EarlyStopping
 
 # Crear un objeto ArgumentParser
 parser = argparse.ArgumentParser(description="Script para entrenar un modelo de clasificación de gestos.")
@@ -54,6 +55,7 @@ train_labels = labels_array[:train_size]
 val_landmarks = landmarks_array[train_size:]
 val_labels = labels_array[train_size:]
 
+# Construir el modelo
 dense_model = tf.keras.Sequential(
     [
         tf.keras.layers.Input(shape=(21, 3)), # 21 puntos clave
@@ -64,6 +66,9 @@ dense_model = tf.keras.Sequential(
         tf.keras.layers.Dense(num_clases, activation="softmax"),
     ]
 )
+
+# Callback
+early_stopping = EarlyStopping(monitor='val_accuracy', patience=10, verbose=0, mode='max')
 
 dense_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
                 loss='sparse_categorical_crossentropy',
@@ -82,6 +87,7 @@ dense_history = dense_model.fit(
     epochs=dense_epoch,
     batch_size=batch_size,
     shuffle=True,
+    callbacks=[early_stopping]
 )
 
 print("\n\nENTRENAMIENTO FINALIZADO\n")
