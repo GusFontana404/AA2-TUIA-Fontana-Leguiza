@@ -14,6 +14,8 @@ Este proyecto implementa un sistema de clasificación de gestos utilizando la bi
 3-  rock-paper-scissors.py: Este script utiliza la cámara en streaming para ejecutar el modelo de clasificación entrenado y clasificar los gestos detectados. El argumento necesario es la ruta del modelo entrenado:
 -  --model_path: Ruta para cargar el modelo entrenado.
 
+4- rock_paper_scissors.png: Esta imagen muestra diferentes capturas con la detección y clasificación de gestos como prueba del funcionamieno del modelo rock-paper-scissors.
+
 ## **Requisitos**
 Para ejecutar los scripts, necesitarás instalar las siguientes bibliotecas:
 - opencv-python
